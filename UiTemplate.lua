@@ -6,6 +6,7 @@ local window = DrRayLibrary:Load("CDTStorm", "Default")
 
 --1st tab
 local tab = DrRayLibrary.newTab("Test Farming", "ImageIdHere")
+tab1.newLabel("Information's Tab")
 tab1.newToggle("Auto Race", "Toggle! (prints the state)", false, function(state)
             _G.racetest = (state and true or false)
             while _G.racetest do
