@@ -2,7 +2,7 @@
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 
 -- Create a new window and set its title and theme
-local window = DrRayLibrary:Load("DrRay!", "Default")
+local window = DrRayLibrary:Load("CDStorm", "Default")
 
 -- Create the first tab with an image ID
 local tab1 = DrRayLibrary.newTab("Tab 1", "ImageIdHere")
