@@ -8,24 +8,25 @@ local window = DrRayLibrary:Load("CDTStorm", "Default")
 local tab = DrRayLibrary.newTab("Test Farming", "ImageIdHere")
 tab1.newLabel("Information's Tab")
 tab1.newToggle("Auto Race", "Toggle! (prints the state)", false, function(state)
-            _G.racetest = (state and true or false)
-            while _G.racetest do
-                wait()
-            if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == false then
-                local chr = game.Players.LocalPlayer.Character
-            local car = chr.Humanoid.SeatPart.Parent.Parent
-            chr.Head.Anchored = true
-            wait(1)
-            chr.Head.Anchored = false
-            wait(1)
+    _G.racetest = (state and true or false)
+    while _G.racetest do
+        wait()
+    if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == false then
+        local chr = game.Players.LocalPlayer.Character
+    local car = chr.Humanoid.SeatPart.Parent.Parent
+    car:PivotTo(CFrame.new(1049.2476806640625, 609.7359008789062, 2511.8427734375))
+    chr.Head.Anchored = true
+    wait(1)
+    chr.Head.Anchored = false
+    wait(1)
 workspace:WaitForChild("Races"):WaitForChild("RaceHandler"):WaitForChild("StartLobby"):FireServer(unpack(Race))
 
-            task.wait(15)
+    task.wait(15)
 workspace.Races.Race.Script.Vote:FireServer("10", "Vote")
-            repeat wait()
-            until game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true or _G.racetest == false
-            elseif game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true then
-            for i =1,50 do
+    repeat wait()
+    until game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true or _G.racetest == false
+    elseif game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true then
+    for i =1,50 do
 workspace.Races.Race.Script.Checkpoint:FireServer(i)
 end
 end
